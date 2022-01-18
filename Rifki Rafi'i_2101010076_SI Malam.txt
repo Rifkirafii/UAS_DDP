@@ -1,0 +1,68 @@
+/**************************
+
+WNama : Rifki Rafi'i
+Nim : 2101010076
+Kelas : SI Malam
+
+***************************/
+#include <iostream>
+#include<cstdlib>
+#include<ctime>
+#include <string>
+using namespace std;
+string passwordd, username;
+char con;
+int total;
+char password[] = {"0123456789!@#$%^&*abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"};
+int string_length = sizeof(password)-1;
+int main()
+{
+    ulang:
+    repeat1:
+    cout<<"Masukan Username : ";
+    getline(cin, username);
+    total=username.length();
+    if (total<8){
+    cout<<"username yang anda masukan kurang dari 8 huruf !!!"<<endl;
+    goto ulang;
+    } else if(total>32){
+     cout<<"username yang anda masukan lebih dari 32 karakter !!!";
+     goto ulang;
+    }
+    cout<<"Apakah ingin membuat password dalam bentuk random Y (Yes) atau N (No)? ";
+    cin>>con;
+    switch(con)
+    {
+    case 'N':
+    ulang2:
+    cout<<"masukan password : ";
+    getline(cin, passwordd);
+    total=passwordd.length();
+    if (total<8){
+    cout<<"password yang anda masukan kurang dari 8 huruf !!!"<<endl;
+    goto ulang2;
+    } else if(total>32){
+     cout<<"password yang anda masukan lebih dari 32 karakter !!!";   
+     goto ulang2;
+    }
+    cout<<endl;
+	cout<<"username anda : "<<username<<endl;
+	cout<<"password anda : "<<passwordd<<endl;
+    cout<<endl;
+    break;
+    case 'Y':
+    cout<<endl;
+	cout<<"username anda : "<<username<<endl;
+    srand(time(0));
+    cout<<"password anda : ";
+    for(int i = 0; i < 8; i++)
+    cout << password[rand() % string_length];
+    break; 
+    default:
+	  cout <<
+	    "Harus memasukan Y (Yes) atau N (No) !!!"<<endl<<endl;
+    } 
+    cout<<endl;
+    goto ulang;
+    return 0;
+}
