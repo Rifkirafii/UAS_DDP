@@ -1,0 +1,41 @@
+// Nama : I Gede Karma Santiyasa
+// Nim : 2101010041
+// Kelas : SI Malam
+
+#include <iostream>
+
+using namespace std;
+
+int main(){
+    int nilaiSiswa[5] = {};
+
+    cout << "Program Menentukan Kategori Nilai Siswa Sederhana" << endl << endl;
+    
+    for(int i = 0; i <= 4  ; i++) {
+        cout << "Masukan Nilai Siswa ke-" << i+1 << " : ";
+        cin >> nilaiSiswa[i];
+    }
+
+    cout << endl;
+    cout << "------------------------------------------";
+    cout << endl;
+    
+    for (int j = 0; j <= 4; j++) {
+        if (nilaiSiswa[j] >= 90) {
+            cout << "Siswa ke-" << j + 1 << " Mendapatkan Nilai A" << endl;
+        }
+        else if (nilaiSiswa[j] >= 80 && nilaiSiswa[j] <= 89) {
+            cout << "Siswa ke-" << j + 1 << " Mendapatkan Nilai B" << endl;
+        }
+        else if(nilaiSiswa[j] >= 70 && nilaiSiswa[j] <= 79) {
+            cout << "Siswa ke-" << j + 1 << " Mendapatkan Nilai C" << endl;
+        }
+        else if (nilaiSiswa[j] >= 60 && nilaiSiswa[j] <= 69) {
+            cout << "Siswa ke-" << j + 1 << " Mendapatkan Nilai D" << endl;
+        }
+        else if (nilaiSiswa[j] <= 59) {
+            cout << "Siswa ke-" << j + 1 << " Mendapatkan Nilai E" << endl;
+        }
+    }
+    
+}
